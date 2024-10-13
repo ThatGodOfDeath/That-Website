@@ -1,13 +1,144 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title>The Website!!!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cracked Glass Effect with Radiating Lines</title>
+    <style>
+        /* Basic CSS reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full page radial gradient */
+        body {
+            height: 100vh; /* Full viewport height */
+            background: radial-gradient(circle, #141414, #3d3d3d); /* Darker gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Cracked glass effect */
+        .cracked-glass {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allow clicks through the overlay */
+        }
+
+        .crack {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1); /* White cracks */
+            opacity: 0.5; /* Slight opacity for realism */
+            width: 100%;
+            height: 2px; /* Keep the line width consistent */
+        }
+
+        /* Create multiple cracks at different locations */
+        .crack:nth-child(1) { top: 5%; transform: rotate(15deg); }
+        .crack:nth-child(2) { top: 15%; transform: rotate(-10deg); }
+        .crack:nth-child(3) { top: 20%; transform: rotate(30deg); }
+        .crack:nth-child(4) { top: 25%; transform: rotate(-20deg); }
+        .crack:nth-child(5) { top: 35%; transform: rotate(10deg); }
+        .crack:nth-child(6) { top: 40%; transform: rotate(-30deg); }
+        .crack:nth-child(7) { top: 45%; transform: rotate(25deg); }
+        .crack:nth-child(8) { top: 50%; transform: rotate(-15deg); }
+        .crack:nth-child(9) { top: 55%; transform: rotate(5deg); }
+        .crack:nth-child(10) { top: 60%; transform: rotate(-25deg); }
+        .crack:nth-child(11) { top: 70%; transform: rotate(20deg); }
+        .crack:nth-child(12) { top: 75%; transform: rotate(-5deg); }
+        .crack:nth-child(13) { top: 80%; transform: rotate(30deg); }
+        .crack:nth-child(14) { top: 85%; transform: rotate(-10deg); }
+        .crack:nth-child(15) { top: 90%; transform: rotate(15deg); }
+
+        /* Larger circular button style */
+        .button {
+            width: 187px; /* Button width */
+            height: 187px; /* Button height */
+            border-radius: 50%; /* Make it circular */
+            background: radial-gradient(circle, white, black); /* Gradient from center (white) to edge (black) */
+            border: none; /* No border on button */
+            position: absolute; /* Positioning to allow for space */
+            z-index: 5; /* Ensure button is above cracks */
+            cursor: pointer; /* Pointer cursor on hover */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for centering */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: darkgreen; /* Change text color to dark green */
+            font-size: 40px; /* Increased text size to 40px (double original) */
+            font-weight: bold; /* Text weight */
+            text-align: center; /* Center text */
+        }
+
+        /* Black ring around button */
+        .ring {
+            width: 220px; /* Size of the ring */
+            height: 220px; /* Size of the ring */
+            border-radius: 50%; /* Make it circular */
+            border: 15px solid #005f8c; /* Darker blue color for the ring */
+            position: absolute; /* Absolute positioning */
+            z-index: 0; /* Behind the button */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%) scale(1.1); /* Move away uniformly by scaling */
+            transition: border-color 0.3s ease; /* Smooth transition for hover effect */
+            overflow: hidden; /* Ensure overflow is hidden for the lines */
+        }
+
+        /* Change ring color on hover */
+        .ring:hover {
+            border-color: #0080a5; /* Change to a slightly lighter blue on hover */
+        }
+
+        /* Outer transparent space (gap) */
+        .gap {
+            width: 240px; /* Size of the gap */
+            height: 240px; /* Size of the gap */
+            border-radius: 50%; /* Make it circular */
+            position: absolute; /* Absolute positioning */
+            z-index: 3; /* Behind the ring */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for centering */
+            background-color: transparent; /* Ensure transparency */
+            border: 0; /* Remove border */
+        }
+    </style>
 </head>
-<body style="background:radial-gradient(ellipse,black,gray,white); min-height: 100vh">
-    <h1 style="color:green ; position:absolute; top:50%; left: 50%; transform: translate(-50%,-50%)">
-      The B0L0D5
-    </h1>
+<body>
+
+    <div class="cracked-glass">
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+        <div class="crack"></div>
+    </div>
+
+    <div class="gap"></div> <!-- Transparent gap around the button -->
+    <div class="ring"></div> <!-- Darker blue ring around button -->
+    <button class="button" onclick="window.open('p2.html', '_blank')">Click Me!</button> <!-- Circular button in center with text -->
+
 </body>
 </html>
