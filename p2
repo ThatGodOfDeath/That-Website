@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The WEBSITE!!!</title>
+    <title>Page 1</title>
 </head>
 <body style="background:radial-gradient(ellipse,black,gray,white); min-height: 100vh">
     <h1 style="color:green ; position:absolute; top:50%; left: 50%; transform: translate(-50%,-50%)">
